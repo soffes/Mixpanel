@@ -1,6 +1,6 @@
 # Mixpanel
 
-Unoffical [Mixpanel](https://mixpanel.com) client written in Swift for iOS and Mac.
+Unofficial [Mixpanel](https://mixpanel.com) client written in Swift for iOS and Mac.
 
 This is a very simple client that just implements tracking events and identifying the current user. A network request is initiated whenver you call `track`. If it fails, nothing happens. Eventually, it would be cool if it stored these and retried at some point.
 
