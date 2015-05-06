@@ -340,7 +340,7 @@
 				);
 				INFOPLIST_FILE = Mixpanel/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = Mixpanel;
 				SDKROOT = iphoneos;
@@ -359,7 +359,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Mixpanel/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = Mixpanel;
 				SDKROOT = iphoneos;
@@ -388,6 +388,7 @@
 				21193BD71AF03ECE009FD090 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21193BF51AF03F54009FD090 /* Build configuration list for PBXNativeTarget "Mixpanel-iOS" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +397,7 @@
 				21193BF71AF03F54009FD090 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
