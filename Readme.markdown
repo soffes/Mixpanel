@@ -1,13 +1,13 @@
 # Mixpanel
 
+[![Version](https://img.shields.io/github/release/soffes/Mixpanel.svg)](https://github.com/soffes/Mixpanel/releases) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
 Unofficial [Mixpanel](https://mixpanel.com) client written in Swift for iOS and Mac.
 
 This is a very simple client that just implements tracking events and identifying the current user. A network request is initiated whenver you call `track`. If it fails, nothing happens. Eventually, it would be cool if it stored these and retried at some point.
 
 
 ## Installation
-
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 [Carthage](https://github.com/carthage/carthage) is the recommended way to install Mixpanel. Add the following to your Cartfile:
 
