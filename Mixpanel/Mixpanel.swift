@@ -14,8 +14,8 @@ import Foundation
 	import AppKit
 #endif
 
-/// Simple wrapper for Mixpanel. All requests are sent to the network in the background. If there is no
-/// Internet connection, it will silently fail.
+/// Simple wrapper for Mixpanel. All requests are sent to the network in the background. If there is no Internet
+/// connection, it will silently fail.
 public struct Mixpanel {
 
 	// MARK: - Types
