@@ -10,7 +10,7 @@ import Foundation
 
 #if os(iOS)
 	import UIKit
-	#else
+#else
 	import AppKit
 #endif
 
@@ -70,7 +70,7 @@ public class Mixpanel {
 			let size = UIScreen.mainScreen().bounds.size
 			properties["$screen_width"] = UInt(size.width)
 			properties["$screen_height"] = UInt(size.height)
-			#else
+		#else
 			properties["mp_lib"] = "mac"
 
 			let processInfo = NSProcessInfo()
@@ -128,19 +128,29 @@ public class Mixpanel {
 			"properties": properties
 		]
 
-		if let json = NSJSONSerialization.dataWithJSONObject(payload, options: nil, error: nil) {
-			let base64 = json.base64EncodedStringWithOptions(nil).stringByReplacingOccurrencesOfString("\n", withString: "")
+		do {
+			let json = try NSJSONSerialization.dataWithJSONObject(payload, options: [])
+			let base64 = json.base64EncodedStringWithOptions([]).stringByReplacingOccurrencesOfString("\n", withString: "")
 			if let url = NSURL(string: "\(endpoint)?data=\(base64)") {
-				let request = NSURLRequest(URL: url)
-				let task = URLSession.dataTaskWithRequest(request, completionHandler: { data, response, error in
-					if let string = NSString(data: data, encoding: NSUTF8StringEncoding) {
-						completion?(success: string == "1")
-					} else {
+				let task = URLSession.dataTaskWithRequest(NSURLRequest(URL: url), completionHandler: { data, _, error in
+					if error != nil {
 						completion?(success: false)
+						return
 					}
+
+					let string = String(data: data, encoding: NSUTF8StringEncoding)
+					completion?(success: string == "1")
 				})
-				task.resume()
+
+				if let task = task {
+					task.resume()
+					return
+				}
 			}
+		} catch {
+			// Do nothing
 		}
+
+		completion?(success: false)
 	}
 }
