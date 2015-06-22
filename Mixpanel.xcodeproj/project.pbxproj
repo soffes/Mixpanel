@@ -96,9 +96,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		21193BBE1AF03ECE009FD090 /* Mixpanel-Mac */ = {
+		21193BBE1AF03ECE009FD090 /* Mixpanel-OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 21193BD51AF03ECE009FD090 /* Build configuration list for PBXNativeTarget "Mixpanel-Mac" */;
+			buildConfigurationList = 21193BD51AF03ECE009FD090 /* Build configuration list for PBXNativeTarget "Mixpanel-OSX" */;
 			buildPhases = (
 				21193BBA1AF03ECE009FD090 /* Sources */,
 				21193BBB1AF03ECE009FD090 /* Frameworks */,
@@ -109,7 +109,7 @@
 			);
 			dependencies = (
 			);
-			name = "Mixpanel-Mac";
+			name = "Mixpanel-OSX";
 			productName = Mixpanel;
 			productReference = 21193BBF1AF03ECE009FD090 /* Mixpanel.framework */;
 			productType = "com.apple.product-type.framework";
@@ -162,7 +162,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				21193BBE1AF03ECE009FD090 /* Mixpanel-Mac */,
+				21193BBE1AF03ECE009FD090 /* Mixpanel-OSX */,
 				21193BE11AF03F53009FD090 /* Mixpanel-iOS */,
 			);
 		};
@@ -294,6 +294,7 @@
 		21193BD61AF03ECE009FD090 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -313,6 +314,7 @@
 		21193BD71AF03ECE009FD090 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -331,6 +333,7 @@
 		21193BF61AF03F54009FD090 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
@@ -354,6 +357,7 @@
 		21193BF71AF03F54009FD090 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -382,7 +386,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		21193BD51AF03ECE009FD090 /* Build configuration list for PBXNativeTarget "Mixpanel-Mac" */ = {
+		21193BD51AF03ECE009FD090 /* Build configuration list for PBXNativeTarget "Mixpanel-OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				21193BD61AF03ECE009FD090 /* Debug */,
