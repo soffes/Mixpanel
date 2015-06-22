@@ -16,7 +16,7 @@ import Foundation
 
 /// Simple wrapper for Mixpanel. All requests are sent to the network in the background. If there is no
 /// Internet connection, it will silently fail.
-public class Mixpanel {
+public struct Mixpanel {
 
 	// MARK: - Types
 
@@ -89,15 +89,16 @@ public class Mixpanel {
 
 	// MARK: - Initializers
 
-	public init(token: String, URLSession: NSURLSession = NSURLSession.sharedSession()) {
+	public init(token: String, identifier: String? = nil, URLSession: NSURLSession = NSURLSession.sharedSession()) {
 		self.token = token
+		self.distinctId = identifier
 		self.URLSession = URLSession
 	}
 
 
 	// MARK: - Tracking
 
-	public func identify(identifier: String?) {
+	public mutating func identify(identifier: String?) {
 		distinctId = identifier
 	}
 
