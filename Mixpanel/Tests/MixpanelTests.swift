@@ -20,16 +20,39 @@ class DisabledSession: NSURLSession {
 
 class MixpanelTests: XCTestCase {
 	func testDisabling() {
-		var client = Mixpanel(token: "asdf1234", URLSession: DisabledSession())
-		client.enabled = false
-
 		let expectation = expectationWithDescription("Completion")
 
+		var client = Mixpanel(token: "asdf1234", URLSession: DisabledSession())
+		client.enabled = false
 		client.track("foo") { success in
-			expectation.fulfill()
 			XCTAssertFalse(success)
+			expectation.fulfill()
 		}
-		
+
+		waitForExpectationsWithTimeout(1, handler: nil)
+	}
+
+	func testTracking() {
+		let expectation = expectationWithDescription("Completion")
+
+		let client = Mixpanel(token: "07e60c15c2630d9047d62ac779203cae", URLSession: Session(cassetteName: "tracking"))
+		client.track("test1", time: NSDate(timeIntervalSince1970: 1434954974)) { success in
+			XCTAssertTrue(success)
+			expectation.fulfill()
+		}
+
+		waitForExpectationsWithTimeout(1, handler: nil)
+	}
+
+	func testTrackingWithParameters() {
+		let expectation = expectationWithDescription("Completion")
+
+		let client = Mixpanel(token: "07e60c15c2630d9047d62ac779203cae", URLSession: Session(cassetteName: "tracking-parameters"))
+		client.track("test2", parameters: ["foo": "bar"], time: NSDate(timeIntervalSince1970: 1434954974)) { success in
+			XCTAssertTrue(success)
+			expectation.fulfill()
+		}
+
 		waitForExpectationsWithTimeout(1, handler: nil)
 	}
 }

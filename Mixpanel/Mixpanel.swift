@@ -139,7 +139,11 @@ public struct Mixpanel {
 						return
 					}
 
-					let string = String(data: data, encoding: NSUTF8StringEncoding)
+					guard let data = data, string = NSString(data: data, encoding: NSUTF8StringEncoding) else {
+						completion?(success: false)
+						return
+					}
+
 					completion?(success: string == "1")
 				})
 

@@ -1,0 +1,30 @@
+{
+  "interactions" : [
+    {
+      "recorded_at" : 1434955274.428917,
+      "response" : {
+        "body" : "MQ==",
+        "status" : 200,
+        "url" : "http:\/\/api.mixpanel.com\/track\/?data=eyJldmVudCI6InRlc3QyIiwicHJvcGVydGllcyI6eyIkbW9kZWwiOiJ4ODZfNjQiLCJmb28iOiJiYXIiLCIkbWFudWZhY3R1cmVyIjoiQXBwbGUiLCJ0b2tlbiI6IjA3ZTYwYzE1YzI2MzBkOTA0N2Q2MmFjNzc5MjAzY2FlIiwidGltZSI6MTQzNDk1NDk3NCwiJHNjcmVlbl9oZWlnaHQiOjE0NDAsIiRzY3JlZW5fd2lkdGgiOjI1NjAsIiRvcyI6Ik1hYyBPUyBYIiwiJG9zX3ZlcnNpb24iOiJWZXJzaW9uIDEwLjEwLjMgKEJ1aWxkIDE0RDEzNikiLCJtcF9saWIiOiJtYWMifX0=",
+        "headers" : {
+          "Server" : "nginx\/1.9.1",
+          "Content-Type" : "application\/json",
+          "Access-Control-Allow-Origin" : "*",
+          "Access-Control-Allow-Methods" : "GET, POST, OPTIONS",
+          "Access-Control-Allow-Credentials" : "true",
+          "Access-Control-Max-Age" : "1728000",
+          "Date" : "Mon, 22 Jun 2015 06:41:14 GMT",
+          "Access-Control-Allow-Headers" : "X-Requested-With",
+          "Content-Length" : "1",
+          "Cache-Control" : "no-cache, no-store",
+          "Connection" : "keep-alive"
+        }
+      },
+      "request" : {
+        "method" : "GET",
+        "url" : "http:\/\/api.mixpanel.com\/track\/?data=eyJldmVudCI6InRlc3QyIiwicHJvcGVydGllcyI6eyIkbW9kZWwiOiJ4ODZfNjQiLCJmb28iOiJiYXIiLCIkbWFudWZhY3R1cmVyIjoiQXBwbGUiLCJ0b2tlbiI6IjA3ZTYwYzE1YzI2MzBkOTA0N2Q2MmFjNzc5MjAzY2FlIiwidGltZSI6MTQzNDk1NDk3NCwiJHNjcmVlbl9oZWlnaHQiOjE0NDAsIiRzY3JlZW5fd2lkdGgiOjI1NjAsIiRvcyI6Ik1hYyBPUyBYIiwiJG9zX3ZlcnNpb24iOiJWZXJzaW9uIDEwLjEwLjMgKEJ1aWxkIDE0RDEzNikiLCJtcF9saWIiOiJtYWMifX0="
+      }
+    }
+  ],
+  "name" : "tracking-parameters"
+}
