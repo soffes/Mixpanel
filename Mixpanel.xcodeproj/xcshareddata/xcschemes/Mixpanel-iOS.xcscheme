@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "21193BE11AF03F53009FD090"
+               BlueprintIdentifier = "210B32411B37DDE2005F43F3"
                BuildableName = "Mixpanel.framework"
                BlueprintName = "Mixpanel-iOS"
                ReferencedContainer = "container:Mixpanel.xcodeproj">
@@ -28,7 +28,26 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "210B324B1B37DDE2005F43F3"
+               BuildableName = "MixpanelTests-iOS.xctest"
+               BlueprintName = "MixpanelTests-iOS"
+               ReferencedContainer = "container:Mixpanel.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "210B32411B37DDE2005F43F3"
+            BuildableName = "Mixpanel.framework"
+            BlueprintName = "Mixpanel-iOS"
+            ReferencedContainer = "container:Mixpanel.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -45,7 +64,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "21193BE11AF03F53009FD090"
+            BlueprintIdentifier = "210B32411B37DDE2005F43F3"
             BuildableName = "Mixpanel.framework"
             BlueprintName = "Mixpanel-iOS"
             ReferencedContainer = "container:Mixpanel.xcodeproj">
@@ -63,7 +82,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "21193BE11AF03F53009FD090"
+            BlueprintIdentifier = "210B32411B37DDE2005F43F3"
             BuildableName = "Mixpanel.framework"
             BlueprintName = "Mixpanel-iOS"
             ReferencedContainer = "container:Mixpanel.xcodeproj">
