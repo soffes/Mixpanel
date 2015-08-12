@@ -133,7 +133,7 @@ public struct Mixpanel {
 			let json = try NSJSONSerialization.dataWithJSONObject(payload, options: [])
 			let base64 = json.base64EncodedStringWithOptions([]).stringByReplacingOccurrencesOfString("\n", withString: "")
 			if let url = NSURL(string: "\(endpoint)?data=\(base64)") {
-				let task = URLSession.dataTaskWithRequest(NSURLRequest(URL: url), completionHandler: { data, _, error in
+				URLSession.dataTaskWithRequest(NSURLRequest(URL: url), completionHandler: { data, _, error in
 					if error != nil {
 						completion?(success: false)
 						return
@@ -145,12 +145,7 @@ public struct Mixpanel {
 					}
 
 					completion?(success: string == "1")
-				})
-
-				if let task = task {
-					task.resume()
-					return
-				}
+				}).resume()
 			}
 		} catch {
 			// Do nothing
