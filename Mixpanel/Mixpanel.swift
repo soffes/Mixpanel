@@ -10,7 +10,9 @@ import Foundation
 
 #if os(iOS)
 	import UIKit
-#else
+#elseif os(watchOS)
+	import WatchKit
+#elseif os(OSX)
 	import AppKit
 #endif
 
@@ -70,7 +72,17 @@ public struct Mixpanel {
 			let size = UIScreen.mainScreen().bounds.size
 			properties["$screen_width"] = UInt(size.width)
 			properties["$screen_height"] = UInt(size.height)
-		#else
+
+		#elseif os(watchOS)
+			properties["mp_lib"] = "applewatch"
+
+			let device = WKInterfaceDevice.currentDevice()
+			properties["$os"] = device.systemName
+			properties["$os_version"] = device.systemVersion
+
+			properties["$screen_width"] = UInt(device.screenBounds.size.width)
+			properties["$screen_height"] = UInt(device.screenBounds.size.height)
+		#elseif os(OSX)
 			properties["mp_lib"] = "mac"
 
 			let processInfo = NSProcessInfo()
