@@ -769,6 +769,7 @@
 				210B32761B37DE5B005F43F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		210B32771B37DE5B005F43F3 /* Build configuration list for PBXNativeTarget "MixpanelTests-OSX" */ = {
 			isa = XCConfigurationList;
@@ -777,6 +778,7 @@
 				210B32791B37DE5B005F43F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		210B328C1B37DED0005F43F3 /* Build configuration list for PBXNativeTarget "Mixpanel-watchOS" */ = {
 			isa = XCConfigurationList;
@@ -785,6 +787,7 @@
 				210B328E1B37DED0005F43F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
