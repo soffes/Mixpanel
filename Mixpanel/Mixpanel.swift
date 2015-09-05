@@ -30,7 +30,7 @@ public struct Mixpanel {
 
 	private var token: String
 	private var URLSession: NSURLSession
-	private let endpoint = "http://api.mixpanel.com/track/"
+	private let endpoint = "https://api.mixpanel.com/track/"
 	private var distinctId: String?
 
 	private var deviceModel: String? {
