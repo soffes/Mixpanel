@@ -1,11 +1,10 @@
 {
   "interactions" : [
     {
-      "recorded_at" : 1434955003.98243,
+      "recorded_at" : 1441750105.527636,
       "response" : {
-        "body" : "MQ==",
         "status" : 200,
-        "url" : "http:\/\/api.mixpanel.com\/track\/?data=eyJldmVudCI6InRlc3QxIiwicHJvcGVydGllcyI6eyIkbW9kZWwiOiJ4ODZfNjQiLCIkbWFudWZhY3R1cmVyIjoiQXBwbGUiLCJ0b2tlbiI6IjA3ZTYwYzE1YzI2MzBkOTA0N2Q2MmFjNzc5MjAzY2FlIiwidGltZSI6MTQzNDk1NDk3NCwiJHNjcmVlbl9oZWlnaHQiOjE0NDAsIiRzY3JlZW5fd2lkdGgiOjI1NjAsIiRvcyI6Ik1hYyBPUyBYIiwiJG9zX3ZlcnNpb24iOiJWZXJzaW9uIDEwLjEwLjMgKEJ1aWxkIDE0RDEzNikiLCJtcF9saWIiOiJtYWMifX0=",
+        "url" : "https:\/\/api.mixpanel.com\/track\/?data=eyJldmVudCI6InRlc3QxIiwicHJvcGVydGllcyI6eyIkbW9kZWwiOiJ4ODZfNjQiLCIkbWFudWZhY3R1cmVyIjoiQXBwbGUiLCJ0b2tlbiI6IjA3ZTYwYzE1YzI2MzBkOTA0N2Q2MmFjNzc5MjAzY2FlIiwidGltZSI6MTQzNDk1NDk3NCwiJHNjcmVlbl9oZWlnaHQiOjY2NywiJHNjcmVlbl93aWR0aCI6Mzc1LCIkb3MiOiJpUGhvbmUgT1MiLCIkb3NfdmVyc2lvbiI6IjkuMCIsIm1wX2xpYiI6ImlwaG9uZSJ9fQ==&ip=1",
         "headers" : {
           "Server" : "nginx\/1.9.1",
           "Content-Type" : "application\/json",
@@ -13,7 +12,7 @@
           "Access-Control-Allow-Methods" : "GET, POST, OPTIONS",
           "Access-Control-Allow-Credentials" : "true",
           "Access-Control-Max-Age" : "1728000",
-          "Date" : "Mon, 22 Jun 2015 06:36:43 GMT",
+          "Date" : "Tue, 08 Sep 2015 22:08:25 GMT",
           "Access-Control-Allow-Headers" : "X-Requested-With",
           "Content-Length" : "1",
           "Cache-Control" : "no-cache, no-store",
@@ -22,7 +21,7 @@
       },
       "request" : {
         "method" : "GET",
-        "url" : "http:\/\/api.mixpanel.com\/track\/?data=eyJldmVudCI6InRlc3QxIiwicHJvcGVydGllcyI6eyIkbW9kZWwiOiJ4ODZfNjQiLCIkbWFudWZhY3R1cmVyIjoiQXBwbGUiLCJ0b2tlbiI6IjA3ZTYwYzE1YzI2MzBkOTA0N2Q2MmFjNzc5MjAzY2FlIiwidGltZSI6MTQzNDk1NDk3NCwiJHNjcmVlbl9oZWlnaHQiOjE0NDAsIiRzY3JlZW5fd2lkdGgiOjI1NjAsIiRvcyI6Ik1hYyBPUyBYIiwiJG9zX3ZlcnNpb24iOiJWZXJzaW9uIDEwLjEwLjMgKEJ1aWxkIDE0RDEzNikiLCJtcF9saWIiOiJtYWMifX0="
+        "url" : "https:\/\/api.mixpanel.com\/track\/?data=eyJldmVudCI6InRlc3QxIiwicHJvcGVydGllcyI6eyIkbW9kZWwiOiJ4ODZfNjQiLCIkbWFudWZhY3R1cmVyIjoiQXBwbGUiLCJ0b2tlbiI6IjA3ZTYwYzE1YzI2MzBkOTA0N2Q2MmFjNzc5MjAzY2FlIiwidGltZSI6MTQzNDk1NDk3NCwiJHNjcmVlbl9oZWlnaHQiOjY2NywiJHNjcmVlbl93aWR0aCI6Mzc1LCIkb3MiOiJpUGhvbmUgT1MiLCIkb3NfdmVyc2lvbiI6IjkuMCIsIm1wX2xpYiI6ImlwaG9uZSJ9fQ==&ip=1"
       }
     }
   ],

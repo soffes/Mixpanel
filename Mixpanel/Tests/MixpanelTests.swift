@@ -11,9 +11,9 @@ import Mixpanel
 import DVR
 
 class DisabledSession: NSURLSession {
-	override func dataTaskWithRequest(request: NSURLRequest, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask? {
+	override func dataTaskWithRequest(request: NSURLRequest, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask {
 		XCTFail("Networking disabled")
-		return nil
+		return NSURLSessionDataTask()
 	}
 }
 
