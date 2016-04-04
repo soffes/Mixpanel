@@ -16,6 +16,44 @@ import Foundation
 	import AppKit
 #endif
 
+public typealias MixpanelPeopleProfile = [String: AnyObject]
+
+/// Supported Mixpanel People analytics update operations.
+/// More: https://mixpanel.com/help/reference/http#people-analytics-updates
+public enum MixpanelPeopleOperation {
+    case Set(MixpanelPeopleProfile)
+    case SetOnce(MixpanelPeopleProfile)
+    case Add(MixpanelPeopleProfile)
+    case Append(MixpanelPeopleProfile)
+    case Union(MixpanelPeopleProfile)
+    case Unset([String])
+    case Delete
+    
+    var JSONName: String {
+        switch self {
+        case .Set(_): return "$set"
+        case .SetOnce(_): return "$set_once"
+        case .Add(_): return "$add"
+        case .Append(_): return "$append"
+        case .Union(_): return "$union"
+        case .Unset(_): return "$unset"
+        case .Delete: return "$delete"
+        }
+    }
+    
+    var JSONValue: AnyObject {
+        switch self {
+        case .Set(let profile): return profile
+        case .SetOnce(let profile): return profile
+        case .Add(let profile): return profile
+        case .Append(let profile): return profile
+        case .Union(let profile): return profile
+        case .Unset(let profile): return profile
+        case .Delete: return ""
+        }
+    }
+}
+
 /// Simple wrapper for Mixpanel. All requests are sent to the network in the background. If there is no Internet
 /// connection, it will silently fail.
 public struct Mixpanel {
@@ -33,6 +71,7 @@ public struct Mixpanel {
 	private var token: String
 	private var URLSession: NSURLSession
 	private let endpoint = "https://api.mixpanel.com/track/"
+    private let peopleEndpoint = "https://api.mixpanel.com/engage/"
 	private var distinctId: String?
 
 	private var deviceModel: String? {
@@ -166,4 +205,47 @@ public struct Mixpanel {
 
 		completion?(success: false)
 	}
+    
+    public func people(operation: MixpanelPeopleOperation, completion: Completion? = nil) {
+        guard enabled else {
+            completion?(success: false)
+            return
+        }
+        
+        // Mixpanel People API requires a `distinctId`.
+        guard let distinctId = distinctId else {
+            completion?(success: false)
+            return
+        }
+        
+        var payload = [String: AnyObject]()
+        payload["$token"] = token
+        payload["$distinct_id"] = distinctId
+        payload[operation.JSONName] = operation.JSONValue
+        
+        do {
+            let json = try NSJSONSerialization.dataWithJSONObject(payload, options: [])
+            let base64 = json.base64EncodedStringWithOptions([]).stringByReplacingOccurrencesOfString("\n", withString: "")
+            if let url = NSURL(string: "\(peopleEndpoint)?data=\(base64)") {
+                URLSession.dataTaskWithRequest(NSURLRequest(URL: url), completionHandler: { _, res, error in
+                    if error != nil {
+                        completion?(success: false)
+                        return
+                    }
+                    
+                    guard let response = res as? NSHTTPURLResponse else {
+                        completion?(success: false)
+                        return
+                    }
+                    
+                    completion?(success: response.statusCode == 200)
+                }).resume()
+                return
+            }
+        } catch {
+            // Do nothing
+        }
+        
+        completion?(success: false)
+    }
 }
