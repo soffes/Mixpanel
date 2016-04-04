@@ -55,4 +55,22 @@ class MixpanelTests: XCTestCase {
 
 		waitForExpectationsWithTimeout(1, handler: nil)
 	}
+    
+    func testPeopleSet() {
+        let expectation = expectationWithDescription("Completion")
+        
+        let client = Mixpanel(token: "07e60c15c2630d9047d62ac779203cae", identifier: "1", URLSession: Session(cassetteName: "people-set"))
+        
+        let profile = [
+            "$name": "Example User",
+            "$email": "exampleuser@example.com"
+        ]
+        
+        client.people(.Set(profile)) { success in
+            XCTAssertTrue(success)
+            expectation.fulfill()
+        }
+
+        waitForExpectationsWithTimeout(1, handler: nil)
+    }
 }
