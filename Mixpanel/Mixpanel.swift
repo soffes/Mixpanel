@@ -155,7 +155,7 @@ public struct Mixpanel {
 
 
 	public func track(event: String, parameters: [String: AnyObject]? = nil, time: NSDate = NSDate(), completion: Completion? = nil) {
-		if !enabled {
+		guard enabled else {
 			completion?(success: false)
 			return
 		}
@@ -175,35 +175,34 @@ public struct Mixpanel {
 			properties["distinct_id"] = distinctId
 		}
 
-		let payload = [
+        let payload: [String: AnyObject] = [
 			"event": event,
 			"properties": properties
 		]
-
-		do {
-			let json = try NSJSONSerialization.dataWithJSONObject(payload, options: [])
-			let base64 = json.base64EncodedStringWithOptions([]).stringByReplacingOccurrencesOfString("\n", withString: "")
-			if let url = NSURL(string: "\(endpoint)?data=\(base64)&ip=1") {
-				URLSession.dataTaskWithRequest(NSURLRequest(URL: url), completionHandler: { _, res, error in
-					if error != nil {
-						completion?(success: false)
-						return
-					}
-
-					guard let response = res as? NSHTTPURLResponse else {
-						completion?(success: false)
-						return
-					}
-
-					completion?(success: response.statusCode == 200)
-				}).resume()
-				return
-			}
-		} catch {
-			// Do nothing
-		}
-
-		completion?(success: false)
+        
+        guard let encodedPayload = encodePayload(payload) else {
+            completion?(success: false)
+            return
+        }
+        
+        guard let url = NSURL(string: "\(endpoint)?data=\(encodedPayload)&ip=1") else {
+            completion?(success: false)
+            return
+        }
+        
+        URLSession.dataTaskWithRequest(NSURLRequest(URL: url)) { _, response, error in
+            guard error == nil else {
+                completion?(success: false)
+                return
+            }
+            
+            guard let HTTPResponse = response as? NSHTTPURLResponse else {
+                completion?(success: false)
+                return
+            }
+            
+            completion?(success: HTTPResponse.statusCode == 200)
+        }.resume()
 	}
     
     public func people(operation: MixpanelPeopleOperation, completion: Completion? = nil) {
