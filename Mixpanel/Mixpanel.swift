@@ -223,29 +223,39 @@ public struct Mixpanel {
         payload["$distinct_id"] = distinctId
         payload[operation.JSONName] = operation.JSONValue
         
-        do {
-            let json = try NSJSONSerialization.dataWithJSONObject(payload, options: [])
-            let base64 = json.base64EncodedStringWithOptions([]).stringByReplacingOccurrencesOfString("\n", withString: "")
-            if let url = NSURL(string: "\(peopleEndpoint)?data=\(base64)") {
-                URLSession.dataTaskWithRequest(NSURLRequest(URL: url), completionHandler: { _, res, error in
-                    if error != nil {
-                        completion?(success: false)
-                        return
-                    }
-                    
-                    guard let response = res as? NSHTTPURLResponse else {
-                        completion?(success: false)
-                        return
-                    }
-                    
-                    completion?(success: response.statusCode == 200)
-                }).resume()
-                return
-            }
-        } catch {
-            // Do nothing
+        guard let encodedPayload = encodePayload(payload) else {
+            completion?(success: false)
+            return
         }
         
-        completion?(success: false)
+        guard let url = NSURL(string: "\(peopleEndpoint)?data=\(encodedPayload)") else {
+            completion?(success: false)
+            return
+        }
+        
+        URLSession.dataTaskWithRequest(NSURLRequest(URL: url)) { _, response, error in
+            guard error == nil else {
+                completion?(success: false)
+                return
+            }
+            
+            guard let HTTPResponse = response as? NSHTTPURLResponse else {
+                completion?(success: false)
+                return
+            }
+            
+            completion?(success: HTTPResponse.statusCode == 200)
+        }.resume()
+    }
+}
+
+private extension Mixpanel {
+    private func encodePayload(payload: [String: AnyObject]) -> String? {
+        do {
+            let json = try NSJSONSerialization.dataWithJSONObject(payload, options: [])
+            return json.base64EncodedStringWithOptions([]).stringByReplacingOccurrencesOfString("\n", withString: "")
+        } catch {
+            return nil
+        }
     }
 }
