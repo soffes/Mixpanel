@@ -1,0 +1,29 @@
+{
+  "interactions" : [
+    {
+      "recorded_at" : 1459795131.008461,
+      "response" : {
+        "status" : 200,
+        "url" : "https:\/\/api.mixpanel.com\/engage\/?data=eyIkZGlzdGluY3RfaWQiOiIxIiwiJHNldCI6eyIkZW1haWwiOiJleGFtcGxldXNlckBleGFtcGxlLmNvbSIsIiRuYW1lIjoiRXhhbXBsZSBVc2VyIn0sIiR0b2tlbiI6IjA3ZTYwYzE1YzI2MzBkOTA0N2Q2MmFjNzc5MjAzY2FlIn0=",
+        "headers" : {
+          "Server" : "nginx\/1.9.12",
+          "Content-Type" : "application\/json",
+          "Access-Control-Allow-Origin" : "*",
+          "Access-Control-Allow-Methods" : "GET, POST, OPTIONS",
+          "Access-Control-Allow-Credentials" : "true",
+          "Access-Control-Max-Age" : "1728000",
+          "Date" : "Mon, 04 Apr 2016 18:38:50 GMT",
+          "Access-Control-Allow-Headers" : "X-Requested-With",
+          "Content-Length" : "1",
+          "Cache-Control" : "no-cache, no-store",
+          "Connection" : "keep-alive"
+        }
+      },
+      "request" : {
+        "method" : "GET",
+        "url" : "https:\/\/api.mixpanel.com\/engage\/?data=eyIkZGlzdGluY3RfaWQiOiIxIiwiJHNldCI6eyIkZW1haWwiOiJleGFtcGxldXNlckBleGFtcGxlLmNvbSIsIiRuYW1lIjoiRXhhbXBsZSBVc2VyIn0sIiR0b2tlbiI6IjA3ZTYwYzE1YzI2MzBkOTA0N2Q2MmFjNzc5MjAzY2FlIn0="
+      }
+    }
+  ],
+  "name" : "people-set"
+}
