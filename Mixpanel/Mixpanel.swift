@@ -8,7 +8,7 @@
 
 import Foundation
 
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 	import UIKit
 #elseif os(watchOS)
 	import WatchKit
@@ -61,10 +61,14 @@ public struct Mixpanel {
 		if let deviceModel = deviceModel {
 			properties["$model"] = deviceModel
 		}
-
-		#if os(iOS)
-			properties["mp_lib"] = "iphone"
-
+        
+        #if os(iOS)
+            properties["mp_lib"] = "iphone"
+        #elseif os(tvOS)
+            properties["mp_lib"] = "tvOS"
+        #endif
+        
+		#if os(iOS) || os(tvOS)
 			let device = UIDevice.currentDevice()
 			properties["$os"] = device.systemName
 			properties["$os_version"] = device.systemVersion
