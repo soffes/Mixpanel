@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 
-  s.name         = "simpleMixpanel"
+  s.name         = "SimpleMixpanel"
   s.version      = "0.2"
   s.summary      = "Unofficial Mixpanel client written in Swift 2 for iOS/tvOS/watchOS/OSX"
 
