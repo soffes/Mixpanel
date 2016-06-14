@@ -31,16 +31,16 @@ public struct Mixpanel {
 	public var enabled: Bool = true
 
 	private var token: String
-	private var URLSession: NSURLSession
+	private var session: URLSession
 	private let endpoint = "https://api.mixpanel.com/track/"
 	private var distinctId: String?
 
 	private var deviceModel: String? {
-		var size : Int = 0
+		var size: Int = 0
 		sysctlbyname("hw.machine", nil, &size, nil, 0)
-		var machine = [CChar](count: Int(size), repeatedValue: 0)
+		var machine = [CChar](repeating: 0, count: Int(size))
 		sysctlbyname("hw.machine", &machine, &size, nil, 0)
-		return String.fromCString(machine)
+		return String(validatingUTF8: machine)
 	}
 
 	private var defaultProperties: [String: AnyObject] {
@@ -48,7 +48,7 @@ public struct Mixpanel {
 			"$manufacturer": "Apple"
 		]
 
-		if let info = NSBundle.mainBundle().infoDictionary {
+		if let info = Bundle.main().infoDictionary {
 			if let version = info["CFBundleVersion"] as? String {
 				properties["$app_version"] = version
 			}
@@ -69,11 +69,11 @@ public struct Mixpanel {
         #endif
         
 		#if os(iOS) || os(tvOS)
-			let device = UIDevice.currentDevice()
+			let device = UIDevice.current()
 			properties["$os"] = device.systemName
 			properties["$os_version"] = device.systemVersion
 
-			let size = UIScreen.mainScreen().bounds.size
+			let size = UIScreen.main().bounds.size
 			properties["$screen_width"] = UInt(size.width)
 			properties["$screen_height"] = UInt(size.height)
 
@@ -105,10 +105,10 @@ public struct Mixpanel {
 
 	// MARK: - Initializers
 
-	public init(token: String, identifier: String? = nil, URLSession: NSURLSession = NSURLSession.sharedSession()) {
+	public init(token: String, identifier: String? = nil, session: URLSession = URLSession.shared()) {
 		self.token = token
 		self.distinctId = identifier
-		self.URLSession = URLSession
+		self.session = session
 	}
 
 
@@ -119,7 +119,7 @@ public struct Mixpanel {
 	}
 
 
-	public func track(event: String, parameters: [String: AnyObject]? = nil, time: NSDate = NSDate(), completion: Completion? = nil) {
+	public func track(event: String, parameters: [String: AnyObject]? = nil, time: Date = Date(), completion: Completion? = nil) {
 		if !enabled {
 			completion?(success: false)
 			return
@@ -145,27 +145,27 @@ public struct Mixpanel {
 			"properties": properties
 		]
 
-		do {
-			let json = try NSJSONSerialization.dataWithJSONObject(payload, options: [])
-			let base64 = json.base64EncodedStringWithOptions([]).stringByReplacingOccurrencesOfString("\n", withString: "")
-			if let url = NSURL(string: "\(endpoint)?data=\(base64)&ip=1") {
-				URLSession.dataTaskWithRequest(NSURLRequest(URL: url), completionHandler: { _, res, error in
-					if error != nil {
-						completion?(success: false)
-						return
-					}
+		guard let json = try? JSONSerialization.data(withJSONObject: payload, options: []) else {
+			completion?(success: false)
+			return
+		}
 
-					guard let response = res as? NSHTTPURLResponse else {
-						completion?(success: false)
-						return
-					}
+		let base64 = json.base64EncodedString().replacingOccurrences(of: "\n", with: "")
+		if let url = URL(string: "\(endpoint)?data=\(base64)&ip=1") {
+			session.dataTask(with: URLRequest(url: url)) { _, res, error in
+				if error != nil {
+					completion?(success: false)
+					return
+				}
 
-					completion?(success: response.statusCode == 200)
-				}).resume()
-				return
-			}
-		} catch {
-			// Do nothing
+				guard let response = res as? HTTPURLResponse else {
+					completion?(success: false)
+					return
+				}
+
+				completion?(success: response.statusCode == 200)
+			}.resume()
+			return
 		}
 
 		completion?(success: false)

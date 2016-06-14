@@ -76,7 +76,7 @@
 		210B324C1B37DDE2005F43F3 /* MixpanelTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MixpanelTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		210B325C1B37DE1A005F43F3 /* Mixpanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mixpanel.swift; sourceTree = "<group>"; };
 		210B32631B37DE5B005F43F3 /* Mixpanel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mixpanel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		210B326C1B37DE5B005F43F3 /* MixpanelTests-OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MixpanelTests-OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		210B326C1B37DE5B005F43F3 /* MixpanelTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MixpanelTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		210B327C1B37DEBD005F43F3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		210B327D1B37DEBD005F43F3 /* MixpanelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MixpanelTests.swift; sourceTree = "<group>"; };
 		210B32871B37DED0005F43F3 /* Mixpanel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mixpanel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,7 +144,7 @@
 				210B32421B37DDE2005F43F3 /* Mixpanel.framework */,
 				210B324C1B37DDE2005F43F3 /* MixpanelTests-iOS.xctest */,
 				210B32631B37DE5B005F43F3 /* Mixpanel.framework */,
-				210B326C1B37DE5B005F43F3 /* MixpanelTests-OSX.xctest */,
+				210B326C1B37DE5B005F43F3 /* MixpanelTests-macOS.xctest */,
 				210B32871B37DED0005F43F3 /* Mixpanel.framework */,
 			);
 			name = Products;
@@ -272,9 +272,9 @@
 			productReference = 210B324C1B37DDE2005F43F3 /* MixpanelTests-iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		210B32621B37DE5B005F43F3 /* Mixpanel-OSX */ = {
+		210B32621B37DE5B005F43F3 /* Mixpanel-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 210B32741B37DE5B005F43F3 /* Build configuration list for PBXNativeTarget "Mixpanel-OSX" */;
+			buildConfigurationList = 210B32741B37DE5B005F43F3 /* Build configuration list for PBXNativeTarget "Mixpanel-macOS" */;
 			buildPhases = (
 				210B325E1B37DE5B005F43F3 /* Sources */,
 				210B325F1B37DE5B005F43F3 /* Frameworks */,
@@ -285,14 +285,14 @@
 			);
 			dependencies = (
 			);
-			name = "Mixpanel-OSX";
+			name = "Mixpanel-macOS";
 			productName = Mixpanel;
 			productReference = 210B32631B37DE5B005F43F3 /* Mixpanel.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		210B326B1B37DE5B005F43F3 /* MixpanelTests-OSX */ = {
+		210B326B1B37DE5B005F43F3 /* MixpanelTests-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 210B32771B37DE5B005F43F3 /* Build configuration list for PBXNativeTarget "MixpanelTests-OSX" */;
+			buildConfigurationList = 210B32771B37DE5B005F43F3 /* Build configuration list for PBXNativeTarget "MixpanelTests-macOS" */;
 			buildPhases = (
 				210B32681B37DE5B005F43F3 /* Sources */,
 				210B32691B37DE5B005F43F3 /* Frameworks */,
@@ -304,9 +304,9 @@
 			dependencies = (
 				210B326F1B37DE5B005F43F3 /* PBXTargetDependency */,
 			);
-			name = "MixpanelTests-OSX";
+			name = "MixpanelTests-macOS";
 			productName = MixpanelTests;
-			productReference = 210B326C1B37DE5B005F43F3 /* MixpanelTests-OSX.xctest */;
+			productReference = 210B326C1B37DE5B005F43F3 /* MixpanelTests-macOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		210B32861B37DED0005F43F3 /* Mixpanel-watchOS */ = {
@@ -339,18 +339,32 @@
 				TargetAttributes = {
 					210B32411B37DDE2005F43F3 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 676PZY29MZ;
+						DevelopmentTeamName = "Canvas Labs, Inc.";
+						LastSwiftMigration = 0800;
 					};
 					210B324B1B37DDE2005F43F3 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 676PZY29MZ;
+						DevelopmentTeamName = "Canvas Labs, Inc.";
+						LastSwiftMigration = 0800;
 					};
 					210B32621B37DE5B005F43F3 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 676PZY29MZ;
+						DevelopmentTeamName = "Canvas Labs, Inc.";
+						ProvisioningStyle = Automatic;
 					};
 					210B326B1B37DE5B005F43F3 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 676PZY29MZ;
+						DevelopmentTeamName = "Canvas Labs, Inc.";
+						ProvisioningStyle = Automatic;
 					};
 					210B32861B37DED0005F43F3 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 676PZY29MZ;
+						DevelopmentTeamName = "Canvas Labs, Inc.";
 					};
 				};
 			};
@@ -368,8 +382,8 @@
 			targets = (
 				210B32411B37DDE2005F43F3 /* Mixpanel-iOS */,
 				210B324B1B37DDE2005F43F3 /* MixpanelTests-iOS */,
-				210B32621B37DE5B005F43F3 /* Mixpanel-OSX */,
-				210B326B1B37DE5B005F43F3 /* MixpanelTests-OSX */,
+				210B32621B37DE5B005F43F3 /* Mixpanel-macOS */,
+				210B326B1B37DE5B005F43F3 /* MixpanelTests-macOS */,
 				210B32861B37DED0005F43F3 /* Mixpanel-watchOS */,
 			);
 		};
@@ -468,7 +482,7 @@
 		};
 		210B326F1B37DE5B005F43F3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 210B32621B37DE5B005F43F3 /* Mixpanel-OSX */;
+			target = 210B32621B37DE5B005F43F3 /* Mixpanel-macOS */;
 			targetProxy = 210B326E1B37DE5B005F43F3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -582,6 +596,7 @@
 				PRODUCT_NAME = Mixpanel;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -600,6 +615,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.mixpanel;
 				PRODUCT_NAME = Mixpanel;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -612,6 +628,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.MixpanelTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -624,6 +641,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.MixpanelTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -631,6 +649,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -651,6 +670,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -670,6 +690,7 @@
 		210B32781B37DE5B005F43F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Carthage/Build/Mac\"";
 				INFOPLIST_FILE = Mixpanel/Tests/Info.plist;
@@ -684,6 +705,7 @@
 		210B32791B37DE5B005F43F3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Carthage/Build/Mac\"";
 				INFOPLIST_FILE = Mixpanel/Tests/Info.plist;
@@ -698,6 +720,7 @@
 		210B328D1B37DED0005F43F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -717,6 +740,7 @@
 		210B328E1B37DED0005F43F3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -763,7 +787,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		210B32741B37DE5B005F43F3 /* Build configuration list for PBXNativeTarget "Mixpanel-OSX" */ = {
+		210B32741B37DE5B005F43F3 /* Build configuration list for PBXNativeTarget "Mixpanel-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				210B32751B37DE5B005F43F3 /* Debug */,
@@ -772,7 +796,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		210B32771B37DE5B005F43F3 /* Build configuration list for PBXNativeTarget "MixpanelTests-OSX" */ = {
+		210B32771B37DE5B005F43F3 /* Build configuration list for PBXNativeTarget "MixpanelTests-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				210B32781B37DE5B005F43F3 /* Debug */,
