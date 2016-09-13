@@ -80,7 +80,7 @@ public struct Mixpanel {
 		#elseif os(watchOS)
 			properties["mp_lib"] = "applewatch"
 
-			let device = WKInterfaceDevice.currentDevice()
+			let device = WKInterfaceDevice.current()
 			properties["$os"] = device.systemName
 			properties["$os_version"] = device.systemVersion
 
