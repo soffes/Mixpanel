@@ -89,11 +89,11 @@ public struct Mixpanel {
 		#elseif os(OSX)
 			properties["mp_lib"] = "mac"
 
-			let processInfo = NSProcessInfo()
+			let processInfo = ProcessInfo()
 			properties["$os"] = "Mac OS X"
 			properties["$os_version"] = processInfo.operatingSystemVersionString
 
-			if let size = NSScreen.mainScreen()?.frame.size {
+			if let size = NSScreen.main()?.frame.size {
 				properties["$screen_width"] = UInt(size.width)
 				properties["$screen_height"] = UInt(size.height)
 			}
