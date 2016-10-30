@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0800"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "210B32621B37DE5B005F43F3"
                BuildableName = "Mixpanel.framework"
-               BlueprintName = "Mixpanel-OSX"
+               BlueprintName = "Mixpanel-macOS"
                ReferencedContainer = "container:Mixpanel.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "210B326B1B37DE5B005F43F3"
-               BuildableName = "MixpanelTests-OSX.xctest"
-               BlueprintName = "MixpanelTests-OSX"
+               BuildableName = "MixpanelTests-macOS.xctest"
+               BlueprintName = "MixpanelTests-macOS"
                ReferencedContainer = "container:Mixpanel.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,8 +47,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "210B326B1B37DE5B005F43F3"
-               BuildableName = "MixpanelTests-OSX.xctest"
-               BlueprintName = "MixpanelTests-OSX"
+               BuildableName = "MixpanelTests-macOS.xctest"
+               BlueprintName = "MixpanelTests-macOS"
                ReferencedContainer = "container:Mixpanel.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -58,7 +58,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "210B32621B37DE5B005F43F3"
             BuildableName = "Mixpanel.framework"
-            BlueprintName = "Mixpanel-OSX"
+            BlueprintName = "Mixpanel-macOS"
             ReferencedContainer = "container:Mixpanel.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -80,7 +80,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "210B32621B37DE5B005F43F3"
             BuildableName = "Mixpanel.framework"
-            BlueprintName = "Mixpanel-OSX"
+            BlueprintName = "Mixpanel-macOS"
             ReferencedContainer = "container:Mixpanel.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -98,7 +98,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "210B32621B37DE5B005F43F3"
             BuildableName = "Mixpanel.framework"
-            BlueprintName = "Mixpanel-OSX"
+            BlueprintName = "Mixpanel-macOS"
             ReferencedContainer = "container:Mixpanel.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
