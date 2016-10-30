@@ -10,49 +10,49 @@ import XCTest
 import Mixpanel
 import DVR
 
-class DisabledSession: NSURLSession {
-	override func dataTaskWithRequest(request: NSURLRequest, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask {
+class DisabledSession: URLSession {
+	override func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
 		XCTFail("Networking disabled")
-		return NSURLSessionDataTask()
+		return URLSessionDataTask()
 	}
 }
 
 
 class MixpanelTests: XCTestCase {
 	func testDisabling() {
-		let expectation = expectationWithDescription("Completion")
+		let expectation = self.expectation(description: "Completion")
 
-		var client = Mixpanel(token: "asdf1234", URLSession: DisabledSession())
+		var client = Mixpanel(token: "asdf1234", session: DisabledSession())
 		client.enabled = false
-		client.track("foo") { success in
+		client.track(event: "foo") { success in
 			XCTAssertFalse(success)
 			expectation.fulfill()
 		}
 
-		waitForExpectationsWithTimeout(1, handler: nil)
+		waitForExpectations(timeout: 1)
 	}
 
 	func testTracking() {
-		let expectation = expectationWithDescription("Completion")
+		let expectation = self.expectation(description: "Completion")
 
-		let client = Mixpanel(token: "07e60c15c2630d9047d62ac779203cae", URLSession: Session(cassetteName: "tracking"))
-		client.track("test1", time: NSDate(timeIntervalSince1970: 1434954974)) { success in
+		let client = Mixpanel(token: "07e60c15c2630d9047d62ac779203cae", session: Session(cassetteName: "tracking"))
+		client.track(event: "test1", time: Date(timeIntervalSince1970: 1434954974)) { success in
 			XCTAssertTrue(success)
 			expectation.fulfill()
 		}
 
-		waitForExpectationsWithTimeout(1, handler: nil)
+		waitForExpectations(timeout: 1)
 	}
 
 	func testTrackingWithParameters() {
-		let expectation = expectationWithDescription("Completion")
+		let expectation = self.expectation(description: "Completion")
 
-		let client = Mixpanel(token: "07e60c15c2630d9047d62ac779203cae", URLSession: Session(cassetteName: "tracking-parameters"))
-		client.track("test2", parameters: ["foo": "bar"], time: NSDate(timeIntervalSince1970: 1434954974)) { success in
+		let client = Mixpanel(token: "07e60c15c2630d9047d62ac779203cae", session: Session(cassetteName: "tracking-parameters"))
+		client.track(event: "test2", parameters: ["foo": "bar"], time: Date(timeIntervalSince1970: 1434954974)) { success in
 			XCTAssertTrue(success)
 			expectation.fulfill()
 		}
 
-		waitForExpectationsWithTimeout(1, handler: nil)
+		waitForExpectations(timeout: 2)
 	}
 }

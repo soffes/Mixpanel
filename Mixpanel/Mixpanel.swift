@@ -90,7 +90,7 @@ public struct Mixpanel {
 			properties["mp_lib"] = "mac"
 
 			let processInfo = ProcessInfo()
-			properties["$os"] = "Mac OS X"
+			properties["$os"] = "macOS"
 			properties["$os_version"] = processInfo.operatingSystemVersionString
 
 			if let size = NSScreen.main()?.frame.size {
