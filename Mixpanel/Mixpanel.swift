@@ -93,7 +93,7 @@ public struct Mixpanel {
 			properties["$os"] = "macOS"
 			properties["$os_version"] = processInfo.operatingSystemVersionString
 
-			if let size = NSScreen.main()?.frame.size {
+			if let size = NSScreen.main?.frame.size {
 				properties["$screen_width"] = UInt(size.width)
 				properties["$screen_height"] = UInt(size.height)
 			}
