@@ -7,14 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2104F4D41DC656970039CA14 /* tracking.json in Resources */ = {isa = PBXBuildFile; fileRef = 2104F4D21DC656940039CA14 /* tracking.json */; };
-		2104F4D51DC656970039CA14 /* tracking.json in Resources */ = {isa = PBXBuildFile; fileRef = 2104F4D21DC656940039CA14 /* tracking.json */; };
-		2104F4D71DC656DB0039CA14 /* tracking-parameters.json in Resources */ = {isa = PBXBuildFile; fileRef = 2104F4D61DC656DB0039CA14 /* tracking-parameters.json */; };
-		2104F4D81DC656DB0039CA14 /* tracking-parameters.json in Resources */ = {isa = PBXBuildFile; fileRef = 2104F4D61DC656DB0039CA14 /* tracking-parameters.json */; };
 		2104F4E71DC6570C0039CA14 /* Mixpanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2104F4DE1DC6570C0039CA14 /* Mixpanel.framework */; };
 		2104F4F51DC6574D0039CA14 /* MixpanelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B327D1B37DEBD005F43F3 /* MixpanelTests.swift */; };
-		2104F4F61DC657500039CA14 /* tracking.json in Resources */ = {isa = PBXBuildFile; fileRef = 2104F4D21DC656940039CA14 /* tracking.json */; };
-		2104F4F71DC657500039CA14 /* tracking-parameters.json in Resources */ = {isa = PBXBuildFile; fileRef = 2104F4D61DC656DB0039CA14 /* tracking-parameters.json */; };
 		2104F4F81DC657520039CA14 /* Mixpanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B325C1B37DE1A005F43F3 /* Mixpanel.swift */; };
 		2104F4F91DC657550039CA14 /* Mixpanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 210B32451B37DDE2005F43F3 /* Mixpanel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2104F5621DC659D90039CA14 /* DVR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2104F55A1DC659C90039CA14 /* DVR.framework */; };
@@ -33,6 +27,12 @@
 		210B32971B37DF42005F43F3 /* DVR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 210B32961B37DF42005F43F3 /* DVR.framework */; };
 		210B329A1B37DFF7005F43F3 /* DVR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 210B32921B37DF31005F43F3 /* DVR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		210B329C1B37E002005F43F3 /* DVR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 210B32961B37DF42005F43F3 /* DVR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		21E6A1AD1FDFA1FF00AC2E8C /* tracking.json in Resources */ = {isa = PBXBuildFile; fileRef = 2104F4D21DC656940039CA14 /* tracking.json */; };
+		21E6A1AE1FDFA1FF00AC2E8C /* tracking-parameters.json in Resources */ = {isa = PBXBuildFile; fileRef = 2104F4D61DC656DB0039CA14 /* tracking-parameters.json */; };
+		21E6A1AF1FDFA20000AC2E8C /* tracking.json in Resources */ = {isa = PBXBuildFile; fileRef = 2104F4D21DC656940039CA14 /* tracking.json */; };
+		21E6A1B01FDFA20000AC2E8C /* tracking-parameters.json in Resources */ = {isa = PBXBuildFile; fileRef = 2104F4D61DC656DB0039CA14 /* tracking-parameters.json */; };
+		21E6A1B11FDFA20100AC2E8C /* tracking.json in Resources */ = {isa = PBXBuildFile; fileRef = 2104F4D21DC656940039CA14 /* tracking.json */; };
+		21E6A1B21FDFA20100AC2E8C /* tracking-parameters.json in Resources */ = {isa = PBXBuildFile; fileRef = 2104F4D61DC656DB0039CA14 /* tracking-parameters.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -515,8 +515,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2104F4F71DC657500039CA14 /* tracking-parameters.json in Resources */,
-				2104F4F61DC657500039CA14 /* tracking.json in Resources */,
+				21E6A1B21FDFA20100AC2E8C /* tracking-parameters.json in Resources */,
+				21E6A1B11FDFA20100AC2E8C /* tracking.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,8 +531,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2104F4D71DC656DB0039CA14 /* tracking-parameters.json in Resources */,
-				2104F4D41DC656970039CA14 /* tracking.json in Resources */,
+				21E6A1AE1FDFA1FF00AC2E8C /* tracking-parameters.json in Resources */,
+				21E6A1AD1FDFA1FF00AC2E8C /* tracking.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,8 +547,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2104F4D81DC656DB0039CA14 /* tracking-parameters.json in Resources */,
-				2104F4D51DC656970039CA14 /* tracking.json in Resources */,
+				21E6A1B01FDFA20000AC2E8C /* tracking-parameters.json in Resources */,
+				21E6A1AF1FDFA20000AC2E8C /* tracking.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
