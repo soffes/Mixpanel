@@ -27,12 +27,12 @@
 		210B32971B37DF42005F43F3 /* DVR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 210B32961B37DF42005F43F3 /* DVR.framework */; };
 		210B329A1B37DFF7005F43F3 /* DVR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 210B32921B37DF31005F43F3 /* DVR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		210B329C1B37E002005F43F3 /* DVR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 210B32961B37DF42005F43F3 /* DVR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		21E6A1AD1FDFA1FF00AC2E8C /* tracking.json in Resources */ = {isa = PBXBuildFile; fileRef = 2104F4D21DC656940039CA14 /* tracking.json */; };
-		21E6A1AE1FDFA1FF00AC2E8C /* tracking-parameters.json in Resources */ = {isa = PBXBuildFile; fileRef = 2104F4D61DC656DB0039CA14 /* tracking-parameters.json */; };
-		21E6A1AF1FDFA20000AC2E8C /* tracking.json in Resources */ = {isa = PBXBuildFile; fileRef = 2104F4D21DC656940039CA14 /* tracking.json */; };
-		21E6A1B01FDFA20000AC2E8C /* tracking-parameters.json in Resources */ = {isa = PBXBuildFile; fileRef = 2104F4D61DC656DB0039CA14 /* tracking-parameters.json */; };
-		21E6A1B11FDFA20100AC2E8C /* tracking.json in Resources */ = {isa = PBXBuildFile; fileRef = 2104F4D21DC656940039CA14 /* tracking.json */; };
-		21E6A1B21FDFA20100AC2E8C /* tracking-parameters.json in Resources */ = {isa = PBXBuildFile; fileRef = 2104F4D61DC656DB0039CA14 /* tracking-parameters.json */; };
+		2153412B215372810076214B /* tracking.json in Resources */ = {isa = PBXBuildFile; fileRef = 2153412A215372810076214B /* tracking.json */; };
+		2153412C215372810076214B /* tracking.json in Resources */ = {isa = PBXBuildFile; fileRef = 2153412A215372810076214B /* tracking.json */; };
+		2153412D215372810076214B /* tracking.json in Resources */ = {isa = PBXBuildFile; fileRef = 2153412A215372810076214B /* tracking.json */; };
+		2153412F215372B10076214B /* tracking-parameters.json in Resources */ = {isa = PBXBuildFile; fileRef = 2153412E215372B10076214B /* tracking-parameters.json */; };
+		21534130215372B10076214B /* tracking-parameters.json in Resources */ = {isa = PBXBuildFile; fileRef = 2153412E215372B10076214B /* tracking-parameters.json */; };
+		21534131215372B10076214B /* tracking-parameters.json in Resources */ = {isa = PBXBuildFile; fileRef = 2153412E215372B10076214B /* tracking-parameters.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,8 +96,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2104F4D21DC656940039CA14 /* tracking.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tracking.json; sourceTree = "<group>"; };
-		2104F4D61DC656DB0039CA14 /* tracking-parameters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "tracking-parameters.json"; sourceTree = "<group>"; };
 		2104F4DE1DC6570C0039CA14 /* Mixpanel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mixpanel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2104F4E61DC6570C0039CA14 /* MixpanelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MixpanelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2104F55A1DC659C90039CA14 /* DVR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DVR.framework; sourceTree = "<group>"; };
@@ -113,6 +111,8 @@
 		210B32871B37DED0005F43F3 /* Mixpanel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mixpanel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		210B32921B37DF31005F43F3 /* DVR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVR.framework; path = Carthage/Build/Mac/DVR.framework; sourceTree = "<group>"; };
 		210B32961B37DF42005F43F3 /* DVR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVR.framework; path = Carthage/Build/iOS/DVR.framework; sourceTree = "<group>"; };
+		2153412A215372810076214B /* tracking.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tracking.json; sourceTree = "<group>"; };
+		2153412E215372B10076214B /* tracking-parameters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "tracking-parameters.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,8 +256,8 @@
 		210B329D1B37E30A005F43F3 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
-				2104F4D21DC656940039CA14 /* tracking.json */,
-				2104F4D61DC656DB0039CA14 /* tracking-parameters.json */,
+				2153412A215372810076214B /* tracking.json */,
+				2153412E215372B10076214B /* tracking-parameters.json */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -436,7 +436,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Sam Soffes";
 				TargetAttributes = {
 					2104F4DD1DC6570C0039CA14 = {
@@ -515,8 +515,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21E6A1B21FDFA20100AC2E8C /* tracking-parameters.json in Resources */,
-				21E6A1B11FDFA20100AC2E8C /* tracking.json in Resources */,
+				21534131215372B10076214B /* tracking-parameters.json in Resources */,
+				2153412D215372810076214B /* tracking.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,8 +531,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21E6A1AE1FDFA1FF00AC2E8C /* tracking-parameters.json in Resources */,
-				21E6A1AD1FDFA1FF00AC2E8C /* tracking.json in Resources */,
+				2153412F215372B10076214B /* tracking-parameters.json in Resources */,
+				2153412B215372810076214B /* tracking.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,8 +547,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21E6A1B01FDFA20000AC2E8C /* tracking-parameters.json in Resources */,
-				21E6A1AF1FDFA20000AC2E8C /* tracking.json in Resources */,
+				21534130215372B10076214B /* tracking-parameters.json in Resources */,
+				2153412C215372810076214B /* tracking.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,6 +645,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -669,6 +670,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -744,12 +746,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -784,7 +788,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -807,12 +811,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -840,7 +846,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
@@ -1002,6 +1008,7 @@
 		210B328D1B37DED0005F43F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1020,6 +1027,7 @@
 		210B328E1B37DED0005F43F3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
