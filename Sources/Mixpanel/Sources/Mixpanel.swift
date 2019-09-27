@@ -1,11 +1,3 @@
-//
-//  Mixpanel.swift
-//  Mixpanel
-//
-//  Created by Sam Soffes on 4/21/15.
-//  Copyright © 2015–2017 Sam Soffes. All rights reserved.
-//
-
 import Foundation
 
 #if os(iOS) || os(tvOS)
@@ -23,7 +15,6 @@ public struct Mixpanel {
 	// MARK: - Types
 
 	public typealias Completion = (Bool) -> ()
-
 
 	// MARK: - Properties
 
@@ -102,7 +93,6 @@ public struct Mixpanel {
 		return properties
 	}
 
-
 	// MARK: - Initializers
 
 	public init(token: String, identifier: String? = nil, session: URLSession = URLSession.shared) {
@@ -111,13 +101,11 @@ public struct Mixpanel {
 		self.session = session
 	}
 
-
 	// MARK: - Tracking
 
 	public mutating func identify(identifier: String?) {
 		distinctId = identifier
 	}
-
 
 	public func track(event: String, parameters: [String: Any]? = nil, time: Date = Date(), completion: Completion? = nil) {
 		if !enabled {
